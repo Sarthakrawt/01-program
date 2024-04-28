@@ -4,11 +4,22 @@
         loss: 0,
         tie: 0}; 
        scoreupdate();
-     
+     // all score ;
       function scoreupdate(){
         document.querySelector('.js-score').innerHTML =` wins :${object.win} loss : ${object.loss} tie :${object.tie}`;
       }
-
+      // Auto playing 
+      let isAutoPlaying = flase;
+      let intervalid;
+      function autoplay(){
+        if(!isAutoPlaying){
+         intervalid = setInterval(function(){
+         const playermove = stppss();
+         play(playermove);
+         },1000);
+         isAutoPlaying = true;
+        }
+     //compairing both computermove and playermove
       function play(playermove){
           const computermove = stppss();
           let result = '';
@@ -52,7 +63,7 @@
           scoreupdate();
       }
      
- 
+ // for random or this is computer move 
       function stppss(){
           const randomNum = Math.random();
           let computermove ='';
