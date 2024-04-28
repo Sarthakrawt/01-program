@@ -1,20 +1,10 @@
-/*const object = {
-         win : 0,
-         loss : 0,
-         tie : 0
-      };*/
+
       let object = JSON.parse(localStorage.getItem('object'))
         || {win : 0,
         loss: 0,
         tie: 0}; 
        scoreupdate();
-      /*if(!object){
-          object ={
-              win : 0,
-              loss: 0,
-              tie: 0
-          }
-      }*/
+     
       function scoreupdate(){
         document.querySelector('.js-score').innerHTML =` wins :${object.win} loss : ${object.loss} tie :${object.tie}`;
       }
@@ -58,26 +48,11 @@
           }
           localStorage.setItem('object',JSON.stringify(object));
            document.querySelector('.js-result').innerHTML =result;
-           document.querySelector('.js-moves').innerHTML =`you <img src ="Rockpaper-scissior/${playermove}-emoji.png" class="player">  and computer <img src ="Rockpaper-scissior/${computermove}-emoji.png"class="computer">`;
+           document.querySelector('.js-moves').innerHTML =`you <img src ="Rockpaper-scissior/${playermove}-emoji.png" alt="playermove" class="player">  and computer <img src ="Rockpaper-scissior/${computermove}-emoji.png"class="computer">`;
           scoreupdate();
-
-         /* alert(`you choose ${playermove} . and computer choose ${computermove}. ${result} . 
-            wins :${object.win} loss : ${object.loss} tie :${object.tie}`);*/
       }
      
-     /*function sps(){
-       let computermove= '';
-      const compmove = Math.random();
-      if(compmove>= 0 && compmove < 1/3){
-          computermove = 'stone';
-      }
-      else if(compmove >=1/3 && compmove<2/3){
-          computermove = 'paper';
-      }
-      else if(compmove>=2/3 && compmove<1){
-          computermove ='scissor';
-      }
-  } */
+ 
       function stppss(){
           const randomNum = Math.random();
           let computermove ='';
